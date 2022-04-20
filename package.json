@@ -1,0 +1,24 @@
+{
+  "name": "taiwan-tourguide",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp start",
+    "build": "gulp build",
+    "clean": "gulp clean",
+    "prettier": "prettier --config .prettierrc --write ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.12",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-rename": "^2.0.0",
+    "gulp-run": "^1.7.1",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.50.1"
+  }
+}
