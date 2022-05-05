@@ -2,7 +2,7 @@ const { watch, src, series, dest, parallel } = require("gulp");
 const browserSync = require("browser-sync").create();
 const bundlePath = "./dist";
 const del = require("del");
-const gulpSass = require('gulp-sass')(require('sass'));
+const gulpSass = require("gulp-sass")(require("sass"));
 const rename = require("gulp-rename");
 const package = require("./package.json");
 
@@ -14,9 +14,20 @@ function html() {
 }
 
 // Compile and Minify Img
+function baseCss() {
+  return src("./assets/styles/*").pipe(dest(`${bundlePath}/styles`));
+}
+
+// Compile and Minify Img
 function images() {
   return src("./assets/images/**").pipe(dest(`${bundlePath}/images`));
 }
+
+// Compile and Minify Img
+function demoImages() {
+  return src("./assets/demo/*").pipe(dest(`${bundlePath}/demo`));
+}
+
 // Compile Svg Icons
 function icons() {
   return src("./assets/icons/**").pipe(dest(`${bundlePath}/icons`));
@@ -60,9 +71,23 @@ function server() {
 exports.clean = clean;
 exports.build = series(
   clean,
-  parallel(html, scss, styles, images, icons)
+  html,
+  baseCss,
+  scss,
+  styles,
+  images,
+  demoImages,
+  icons
 );
+
 exports.start = series(
   clean,
-  parallel(html, scss, styles, images, icons, server)
+  html,
+  baseCss,
+  scss,
+  styles,
+  images,
+  demoImages,
+  icons,
+  server
 );
