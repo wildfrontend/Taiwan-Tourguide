@@ -8,7 +8,7 @@ const package = require("./package.json");
 
 // Watch HTML Files
 function html() {
-  return src("./pages/**.html")
+  return src("./pages/**/**.html")
     .pipe(dest(bundlePath))
     .pipe(browserSync.stream());
 }
