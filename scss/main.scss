@@ -4,8 +4,9 @@
 @import "./components/form";
 @import "./components/title";
 
-@import './layouts/page';
-@import './layouts/cards';
+@import "./layouts/page";
+@import "./layouts/cards";
+@import "./layouts/footer";
 
 @import "./pages/home";
 *,
@@ -26,7 +27,7 @@ body {
 }
 
 body {
-  background-color: #E5E5E5;
+  background-color: #e5e5e5;
 }
 
 ul {
