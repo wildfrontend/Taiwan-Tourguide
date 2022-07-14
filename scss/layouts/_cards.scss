@@ -1,0 +1,38 @@
+.cards-1 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
+  grid-gap: 1rem;
+  width: 100%;
+
+
+  @media screen and (max-width:540px) {
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+  }
+}
+
+.card-1 {
+  background-color: white;
+  height: 245px;
+
+
+}
+
+.cards-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18%, 1fr));
+  grid-gap: 1rem;
+  width: 100%;
+
+  @media screen and (max-width : 768px) {
+    grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+  }
+
+  @media screen and (max-width:540px) {
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+  }
+}
+
+.card-2 {
+  background-color: white;
+  height: 120px;
+}

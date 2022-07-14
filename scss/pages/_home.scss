@@ -58,3 +58,42 @@
   background: #FF1D6C;
   color: white;
 }
+
+.home-swipper {
+  display: grid;
+  grid-template-areas:
+    "a b d e g"
+    "a c d f g";
+  gap: 0.5rem;
+  height: 250px;
+  white-space: nowrap;
+  .item-1 {
+    grid-area: a;
+  }
+
+  background-color: aqua;
+
+  .item-2 {
+    grid-area: b;
+  }
+
+  .item-3 {
+    grid-area: c;
+  }
+
+  .item-4 {
+    grid-area: d;
+  }
+
+  .item-5 {
+    grid-area: e;
+  }
+
+  .item-6 {
+    grid-area: f;
+  }
+
+  .item-7 {
+    grid-area: g;
+  }
+}
