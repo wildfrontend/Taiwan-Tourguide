@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import './index.css'
 
 /**
  * ANCHOR Pages
