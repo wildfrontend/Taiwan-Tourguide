@@ -1,10 +1,18 @@
 import React from "react";
 import iconLogo from "../assets/icons/logo.svg";
-import iconMap from "../assets/icons/map_m.svg";
+import iconMapW from "../assets/icons/map_m.svg";
 import iconH01 from "../assets/icons/title_1.svg";
+import iconH02 from "../assets/icons/title_2.svg";
+
 import demoSlider01 from "../assets/demo/taipai.png";
+import demoFireFollwer from "../assets/demo/firefollwer.png";
+import demoFood from "../assets/demo/food.png";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import { ActivityCard, Card } from "../components/card";
+import { Title } from "../components/header";
+import { Footer } from "../components/layout";
 
 const PageHome: React.FC = () => {
   return (
@@ -38,56 +46,53 @@ const PageHome: React.FC = () => {
       {/* Content */}
       <div className="px-4">
         <div className="h-12 w-full"></div>
-        <h2 className="text-[#0D0B0C] text-sm flex items-center my-2">
-          <span>
-            <img className="w-6 h-4" src={iconH01} alt="iconh1" />
-          </span>
-          <span className="pl-1">熱門城市</span>
-        </h2>
+        <Title icon={iconH01} title="熱門城市" />
+
         <div>
           <Swiper slidesPerView={2}>
-            <SwiperSlide>
-              <div className="shadow-md p-2 bg-white w-[160px] h-[192px]">
-                <div className="relative">
-                  <img className="w-full" src={demoSlider01} alt="01" />
-                  <div className="absolute top-0 w-full h-full bg-[rgba(0,0,0,0.3)] flex justify-center items-center">
-                    <div className="flex flex-col justify-center items-center ">
-                      <img className="w-8 h-12" src={iconMap} />
-                      <span className="text-white text-sm">台北市</span>
+            {[1, 2, 3].map((_, i) => {
+              return (
+                <SwiperSlide>
+                  <div className="shadow-md p-2 bg-white w-[160px] h-[192px]">
+                    <div className="relative">
+                      <img className="w-full" src={demoSlider01} alt="01" />
+                      <div className="absolute top-0 w-full h-full bg-[rgba(0,0,0,0.3)] flex justify-center items-center">
+                        <div className="flex flex-col justify-center items-center ">
+                          <img className="w-8 h-12" src={iconMapW} />
+                          <span className="text-white text-sm">台北市</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="shadow-md p-2 bg-white w-[160px] h-[192px]">
-                <div className="relative">
-                  <img className="w-full" src={demoSlider01} alt="01" />
-                  <div className="absolute top-0 w-full h-full bg-[rgba(0,0,0,0.3)] flex justify-center items-center">
-                    <div className="flex flex-col justify-center items-center ">
-                      <img className="w-8 h-12" src={iconMap} />
-                      <span className="text-white text-sm">台北市</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="shadow-md p-2 bg-white w-[160px] h-[192px]">
-                <div className="relative">
-                  <img className="w-full" src={demoSlider01} alt="01" />
-                  <div className="absolute top-0 w-full h-full bg-[rgba(0,0,0,0.3)] flex justify-center items-center">
-                    <div className="flex flex-col justify-center items-center ">
-                      <img className="w-8 h-12" src={iconMap} />
-                      <span className="text-white text-sm">台北市</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
+                </SwiperSlide>
+              );
+            })}
           </Swiper>
         </div>
+        <div className="h-4 w-full"></div>
+        <Title icon={iconH01} title="熱門活動" />
+        <div>
+          {[1, 2, 3].map((_, i) => {
+            return (
+              <ActivityCard
+                image={demoFireFollwer}
+                title="合歡山國際暗空公園-星空清境跨年活動"
+                description="南投縣與各單位多年於合歡山舉辦清境高山跨年晚會活動，今年將活動主軸由傳統跨年晚會轉化成為台灣高山星空遊程之體驗活動，以剛通過美國IDA認證的華語區第一座國際暗空公園作為宣傳主題，在擁有東南的的..."
+                location="南投縣 仁愛鄉"
+              />
+            );
+          })}
+        </div>
+        <div className="h-4 w-full"></div>
+        <Title icon={iconH02} title="熱門餐飲" />
+        <div className="grid grid-cols-2">
+          {[1, 2, 3, 4].map((_, i) => {
+            return <Card image={demoFood} location="基隆市中正區"/>;
+          })}
+        </div>
       </div>
+      <div className="h-4 w-full"></div>
+      <Footer/>
     </>
   );
 };
